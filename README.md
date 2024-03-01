@@ -11,10 +11,10 @@ npm install @swifti/cors
 ## Use
 
 ```ts
-import { Route } from "swifti";
-import cors from "@swifti/cors";
+import { Route } from 'swifti'
+import cors from '@swifti/cors'
 
-const route = new Route().use(cors(/* options */));
+const route = new Route().use(cors(/* options */))
 ```
 
 ## Options
@@ -38,21 +38,21 @@ const route = new Route().use(cors(/* options */));
 ## Example
 
 ```ts
-import { Route } from "swifti";
-import cors, { type CorsOptions } from "@swifti/cors";
+// filename: /middlewares.ts
+import cors, { type CorsOptions } from '@swifti/cors'
 
 const options: CorsOptions = {
-  allowedMethods: ["GET", "POST"],
-  allowedOrigins: ["http://example.com", "https://example.com"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  maxAge: 3600,
-  exposedHeaders: ["Content-Length", "X-Request-ID"],
-  successStatus: 200,
-  credentials: true,
-  preflightContinue: true,
-};
+	allowedMethods: ['GET', 'POST'],
+	allowedOrigins: ['http://example.com', 'https://example.com'],
+	allowedHeaders: ['Content-Type', 'Authorization'],
+	maxAge: 3600,
+	exposedHeaders: ['Content-Length', 'X-Request-ID'],
+	successStatus: 200,
+	credentials: true,
+	preflightContinue: true,
+}
 
-const route = new Route().use(cors(options));
+export default [cors(options)]
 ```
 
 ## License
